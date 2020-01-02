@@ -1,0 +1,25 @@
+<div class="main-container">
+    <div class="header">
+        Currency Converter
+    </div>
+    <div>
+        <input-label [label]="'Type in amount and select currency'"></input-label>
+    </div>
+    <div>
+        <input-field [inputName]="'inputCurrency'" (inputValue)="convertCurrency($event)"></input-field>
+        <drop-down [inputDD]="'INPUT'" (countryCode)="getCountryCode($event)" [ddValue]="'USD'"></drop-down>
+    </div>
+    <div>
+        <input-label [label]="'Converted amount'"></input-label>
+    </div>
+    <div>
+        <input-field [inputName]="'converted'" [value]="convertedValue"></input-field>
+        <drop-down [inputDD]="'CONVERTED'" (countryCode)="getCountryCode($event)" [ddValue]="'CAD'"></drop-down>
+    </div>
+    <div class="disclaimer-link">
+        <a [routerLink]="['/', 'disclaimer']">Disclaimer</a>
+    </div>
+</div>
+<div class="table-container">
+    <app-table></app-table>
+</div>

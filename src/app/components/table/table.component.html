@@ -1,0 +1,26 @@
+<table class="table" cellSpacing="0">
+    <thead>
+        <tr>
+            <th colspan="5" class="table-header">History Data</th>
+            <th></th>
+        </tr>
+        <tr>
+            <th>No</th>
+            <th>From</th>
+            <th>To</th>
+            <th>Date</th>
+            <th>Time</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let item of tableDataArr; let i = index;">
+            <td>{{ i + 1 }}</td>
+            <td>{{ item.from || '' }}</td>
+            <td>{{ item.to || '' }}</td>
+            <td>{{ item.date || '' }}</td>
+            <td>{{ item.time || '' }}</td>
+            <td></td>
+        </tr>
+    </tbody>
+</table>
