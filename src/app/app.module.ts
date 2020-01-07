@@ -29,7 +29,7 @@ import { currencyReducer } from './reducers/currency.reducer';
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    StoreModule.forRoot({'currencyReducers': currencyReducer})
+    StoreModule.forRoot({ 'currencyReducers': currencyReducer })
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,23 +1,26 @@
 <div class="main-container">
     <div class="header">
-        Currency Converter
+        {{ headerText }}
     </div>
     <div>
-        <input-label [label]="'Type in amount and select currency'"></input-label>
+        <input-label [label]="amtToBeConvert"></input-label>
     </div>
     <div>
-        <input-field [inputName]="'inputCurrency'" (inputValue)="convertCurrency($event)"></input-field>
-        <drop-down [inputDD]="'INPUT'" (countryCode)="getCountryCode($event)" [ddValue]="'USD'"></drop-down>
+        <input-field (inputValue)="convertCurrency()"></input-field>
+        <drop-down [inputDD]="inputDDText" (countryCode)="getCountryCode($event)" [ddValue]="inputCountryCode">
+        </drop-down>
     </div>
     <div>
-        <input-label [label]="'Converted amount'"></input-label>
+        <input-label [label]="convertedAmt"></input-label>
     </div>
     <div>
-        <input-field [inputName]="'converted'" [value]="convertedValue"></input-field>
-        <drop-down [inputDD]="'CONVERTED'" (countryCode)="getCountryCode($event)" [ddValue]="'CAD'"></drop-down>
+        <input-field [value]="convertedValue"></input-field>
+        <drop-down [inputDD]="convertedInputText" (countryCode)="getCountryCode($event)"
+            [ddValue]="convertedCountryCode">
+        </drop-down>
     </div>
     <div class="disclaimer-link">
-        <a [routerLink]="['/', 'disclaimer']">Disclaimer</a>
+        <a [routerLink]="['/', 'disclaimer']">{{ disclaimerLinkText }}</a>
     </div>
 </div>
 <div class="table-container">

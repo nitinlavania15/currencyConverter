@@ -9,7 +9,7 @@ export class CurrencyService {
   constructor(private http: HttpClient) { }
 
   getConvertedValue = (countryCode) => {
-    return this.http.get('https://api.exchangeratesapi.io/latest?base='+countryCode);
+    return this.http.get('https://api.exchangeratesapi.io/latest?base=' + countryCode);
   }
 
 }

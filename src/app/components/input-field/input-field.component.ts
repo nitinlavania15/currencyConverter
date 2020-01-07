@@ -1,15 +1,12 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'input-field',
   templateUrl: './input-field.component.html',
   styleUrls: ['./input-field.component.scss']
 })
-export class InputFieldComponent implements OnInit {
+export class InputFieldComponent {
 
-  constructor() { }
-
-  @Input() inputName;
   @Input() value;
 
   @Output() inputValue = new EventEmitter();
@@ -18,9 +15,6 @@ export class InputFieldComponent implements OnInit {
 
   passValue = (passValue) => {
     this.inputValue.emit(passValue);
-  }
-
-  ngOnInit() {
   }
 
 }
